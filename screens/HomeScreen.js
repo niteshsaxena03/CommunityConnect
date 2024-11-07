@@ -56,15 +56,6 @@ export default function HomeScreen({ navigation }) {
         <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
           <TouchableOpacity
             style={[styles.button]}
-            onPress={() => navigation.navigate("SavingsAndBudgeting")}
-          >
-            <Text style={styles.buttonText}>Saving and Budgeting Tips</Text>
-          </TouchableOpacity>
-        </Animated.View>
-
-        <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-          <TouchableOpacity
-            style={[styles.button]}
             onPress={() => navigation.navigate("DigitalPayments")}
           >
             <Text style={styles.buttonText}>Digital Payments and Safety</Text>

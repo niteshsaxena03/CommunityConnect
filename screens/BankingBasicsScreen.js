@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto-Regular",
   },
   videoPreview: {
-    width: 300,
+    width: 350,
     height: 200,
     backgroundColor: "#1E2A47",
     justifyContent: "center",

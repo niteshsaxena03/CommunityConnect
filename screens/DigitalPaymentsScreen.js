@@ -171,6 +171,8 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
   },
   contentContainer: {
+    textAlign:"center",
+    flex:1,
     padding: 20,
   },
   closingText: {
@@ -185,6 +187,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   heading: {
+    textAlign:"center",
     fontSize: 24,
     fontWeight: "bold",
     color: "white",

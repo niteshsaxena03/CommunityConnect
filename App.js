@@ -7,7 +7,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 // Import screen components (you'll define these next)
 import HomeScreen from "./screens/HomeScreen";
 import BankingBasicsScreen from "./screens/BankingBasicsScreen";
-import SavingsAndBudgetingScreen from "./screens/SavingsAndBudgetingScreen";
 import DigitalPaymentsScreen from "./screens/DigitalPaymentsScreen";
 import GovernmentSchemesScreen from "./screens/GovernmentSchemesScreen";
 import InsuranceScreen from "./screens/InsuranceScreen";
@@ -22,10 +21,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="BankingBasics" component={BankingBasicsScreen} />
-        <Stack.Screen
-          name="SavingsAndBudgeting"
-          component={SavingsAndBudgetingScreen}
-        />
+
         <Stack.Screen
           name="DigitalPayments"
           component={DigitalPaymentsScreen}

@@ -7,14 +7,12 @@ import {
   ScrollView,
   Animated,
 } from "react-native";
-import { LinearGradient } from "expo-linear-gradient"; // Expo Linear Gradient
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function HomeScreen({ navigation }) {
-  // Animation setup using React Native's Animated API
   const fadeAnim = new Animated.Value(0);
   const scaleAnim = new Animated.Value(1);
 
-  // Trigger the fade-in animation
   React.useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
@@ -22,7 +20,6 @@ export default function HomeScreen({ navigation }) {
       useNativeDriver: true,
     }).start();
 
-    // Animate button scale on load
     Animated.spring(scaleAnim, {
       toValue: 1.1,
       friction: 2,
@@ -32,7 +29,7 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <LinearGradient
-      colors={["#2C3E50", "#16A085"]} // Darker bluish-green gradient
+      colors={["#1A5276", "#641E16", "#145A32"]} // Dark shades of blue, red, and green
       style={styles.container}
     >
       <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -43,7 +40,6 @@ export default function HomeScreen({ navigation }) {
           </Text>
         </Animated.View>
 
-        {/* Navigation Buttons with cool animations */}
         <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
           <TouchableOpacity
             style={[styles.button]}
@@ -97,6 +93,11 @@ export default function HomeScreen({ navigation }) {
             <Text style={styles.buttonText}>Scam Awareness and Protection</Text>
           </TouchableOpacity>
         </Animated.View>
+
+        {/* Footer Section */}
+        <View style={styles.footer}>
+          <Text style={styles.footerText}>Made by Nitesh Saxena</Text>
+        </View>
       </ScrollView>
     </LinearGradient>
   );
@@ -134,21 +135,41 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto-Regular",
   },
   button: {
-    width: 300, // Set button width to 85% of the screen width
+    width: 350, // Set button width to 85% of the screen width
     padding: 15,
     borderRadius: 10,
-    backgroundColor: "#063B8D", // Blue color for buttons (matches with gradient)
+    backgroundColor: "transparent", // Transparent background for the gradient
     alignItems: "center",
     marginVertical: 12,
-    elevation: 5, // Shadow for Android
-    shadowColor: "#000", // Shadow for iOS
+    elevation: 5,
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+    borderWidth: 2, // Visible border width
+    borderColor: "#3498DB", // Dark Blue border color for contrast
+    background: "linear-gradient(to right, #2980B9, #27AE60, #C0392B)", // Gradient effect
+    borderRadius: 10, // Rounded corners
+    overflow: "hidden", // Ensure rounded corners don't break
+    shadowColor: "#2980B9", // Subtle shadow for a glowing effect
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 15,
   },
   buttonText: {
     fontSize: 18,
     color: "#fff",
     fontWeight: "600",
+  },
+  footer: {
+    marginTop: 30,
+    alignItems: "center",
+    paddingVertical: 10,
+  },
+  footerText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#fff",
+    textAlign: "center",
   },
 });
